@@ -19,7 +19,7 @@ import (
 	"regexp"
 	"strings"
 
-	"golang.org/x/text/internal/gen"
+	"github.com/go-corelibs/x-text/internal/gen"
 )
 
 var outputFile = flag.String("output", "xml.go", "output file name")

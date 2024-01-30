@@ -9,10 +9,10 @@ package main
 import (
 	"log"
 
-	"golang.org/x/text/internal/gen"
-	"golang.org/x/text/internal/language"
-	"golang.org/x/text/internal/language/compact"
-	"golang.org/x/text/unicode/cldr"
+	"github.com/go-corelibs/x-text/internal/gen"
+	"github.com/go-corelibs/x-text/internal/language"
+	"github.com/go-corelibs/x-text/internal/language/compact"
+	"github.com/go-corelibs/x-text/unicode/cldr"
 )
 
 func main() {

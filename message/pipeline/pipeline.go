@@ -24,9 +24,9 @@ import (
 	"golang.org/x/tools/go/ssa"
 	"golang.org/x/tools/go/ssa/ssautil"
 
-	"golang.org/x/text/internal"
-	"golang.org/x/text/language"
-	"golang.org/x/text/runes"
+	"github.com/go-corelibs/x-text/internal"
+	"github.com/go-corelibs/x-text/language"
+	"github.com/go-corelibs/x-text/runes"
 )
 
 const (

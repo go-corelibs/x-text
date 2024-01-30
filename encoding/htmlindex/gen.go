@@ -13,7 +13,7 @@ import (
 	"log"
 	"strings"
 
-	"golang.org/x/text/internal/gen"
+	"github.com/go-corelibs/x-text/internal/gen"
 )
 
 type group struct {

@@ -92,7 +92,7 @@
 // # References
 //
 // BCP 47 - Tags for Identifying Languages http://tools.ietf.org/html/bcp47
-package language // import "golang.org/x/text/language"
+package language // import "github.com/go-corelibs/x-text/language"
 
 // TODO: explanation on how to match languages for your own locale-specific
 // service.

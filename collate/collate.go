@@ -8,14 +8,14 @@
 
 // Package collate contains types for comparing and sorting Unicode strings
 // according to a given collation order.
-package collate // import "golang.org/x/text/collate"
+package collate // import "github.com/go-corelibs/x-text/collate"
 
 import (
 	"bytes"
 	"strings"
 
-	"golang.org/x/text/internal/colltab"
-	"golang.org/x/text/language"
+	"github.com/go-corelibs/x-text/internal/colltab"
+	"github.com/go-corelibs/x-text/language"
 )
 
 // Collator provides functionality for comparing strings for a given

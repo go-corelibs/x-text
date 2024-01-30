@@ -1,4 +1,4 @@
-module golang.org/x/text
+module github.com/go-corelibs/x-text
 
 go 1.18
 

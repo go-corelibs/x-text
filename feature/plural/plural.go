@@ -13,9 +13,9 @@
 package plural
 
 import (
-	"golang.org/x/text/internal/language/compact"
-	"golang.org/x/text/internal/number"
-	"golang.org/x/text/language"
+	"github.com/go-corelibs/x-text/internal/language/compact"
+	"github.com/go-corelibs/x-text/internal/number"
+	"github.com/go-corelibs/x-text/language"
 )
 
 // Rules defines the plural rules for all languages for a certain plural type.

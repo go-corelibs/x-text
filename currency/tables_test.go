@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
-	"golang.org/x/text/internal/gen"
-	"golang.org/x/text/internal/testtext"
-	"golang.org/x/text/language"
-	"golang.org/x/text/message"
-	"golang.org/x/text/unicode/cldr"
+	"github.com/go-corelibs/x-text/internal/gen"
+	"github.com/go-corelibs/x-text/internal/testtext"
+	"github.com/go-corelibs/x-text/language"
+	"github.com/go-corelibs/x-text/message"
+	"github.com/go-corelibs/x-text/unicode/cldr"
 )
 
 var draft = flag.String("draft",

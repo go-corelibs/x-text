@@ -24,9 +24,9 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"golang.org/x/text/message/pipeline"
+	"github.com/go-corelibs/x-text/message/pipeline"
 
-	"golang.org/x/text/language"
+	"github.com/go-corelibs/x-text/language"
 	"golang.org/x/tools/go/buildutil"
 )
 

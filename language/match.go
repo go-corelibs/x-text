@@ -8,7 +8,7 @@ import (
 	"errors"
 	"strings"
 
-	"golang.org/x/text/internal/language"
+	"github.com/go-corelibs/x-text/internal/language"
 )
 
 // A MatchOption configures a Matcher.

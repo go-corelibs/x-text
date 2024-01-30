@@ -24,12 +24,12 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"golang.org/x/text/collate"
-	"golang.org/x/text/collate/build"
-	"golang.org/x/text/internal/colltab"
-	"golang.org/x/text/internal/gen"
-	"golang.org/x/text/language"
-	"golang.org/x/text/unicode/cldr"
+	"github.com/go-corelibs/x-text/collate"
+	"github.com/go-corelibs/x-text/collate/build"
+	"github.com/go-corelibs/x-text/internal/colltab"
+	"github.com/go-corelibs/x-text/internal/gen"
+	"github.com/go-corelibs/x-text/language"
+	"github.com/go-corelibs/x-text/unicode/cldr"
 )
 
 var (

@@ -8,10 +8,10 @@ import (
 	"io"
 	"os"
 
-	"golang.org/x/text/message/pipeline"
+	"github.com/go-corelibs/x-text/message/pipeline"
 )
 
-const printerType = "golang.org/x/text/message.Printer"
+const printerType = "github.com/go-corelibs/x-text/message.Printer"
 
 // TODO:
 // - merge information into existing files

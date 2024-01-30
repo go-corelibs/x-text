@@ -7,8 +7,8 @@ package cases_test
 import (
 	"fmt"
 
-	"golang.org/x/text/cases"
-	"golang.org/x/text/language"
+	"github.com/go-corelibs/x-text/cases"
+	"github.com/go-corelibs/x-text/language"
 )
 
 func Example() {

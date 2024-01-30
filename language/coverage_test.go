@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"testing"
 
-	"golang.org/x/text/internal/language"
+	"github.com/go-corelibs/x-text/internal/language"
 )
 
 func TestSupported(t *testing.T) {

@@ -17,7 +17,7 @@ import (
 // if an error occurred. The code sample typically will look like this:
 //
 //	package main
-//	import "golang.org/x/text/somepackage"
+//	import "github.com/go-corelibs/x-text/somepackage"
 //	func main() {
 //	    somepackage.Func() // reference Func to cause it to be linked in.
 //	}

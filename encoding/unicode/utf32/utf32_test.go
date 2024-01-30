@@ -7,9 +7,9 @@ package utf32
 import (
 	"testing"
 
-	"golang.org/x/text/encoding"
-	"golang.org/x/text/encoding/internal/enctest"
-	"golang.org/x/text/transform"
+	"github.com/go-corelibs/x-text/encoding"
+	"github.com/go-corelibs/x-text/encoding/internal/enctest"
+	"github.com/go-corelibs/x-text/transform"
 )
 
 var (

@@ -137,7 +137,7 @@
 //	You are 5 minutes late.
 //
 // This package is UNDER CONSTRUCTION and its API may change.
-package catalog // import "golang.org/x/text/message/catalog"
+package catalog // import "github.com/go-corelibs/x-text/message/catalog"
 
 // TODO:
 // Some way to freeze a catalog.
@@ -152,10 +152,10 @@ import (
 	"errors"
 	"fmt"
 
-	"golang.org/x/text/internal"
+	"github.com/go-corelibs/x-text/internal"
 
-	"golang.org/x/text/internal/catmsg"
-	"golang.org/x/text/language"
+	"github.com/go-corelibs/x-text/internal/catmsg"
+	"github.com/go-corelibs/x-text/language"
 )
 
 // A Catalog allows lookup of translated messages.

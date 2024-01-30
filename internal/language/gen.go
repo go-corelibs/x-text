@@ -22,9 +22,9 @@ import (
 	"strconv"
 	"strings"
 
-	"golang.org/x/text/internal/gen"
-	"golang.org/x/text/internal/tag"
-	"golang.org/x/text/unicode/cldr"
+	"github.com/go-corelibs/x-text/internal/gen"
+	"github.com/go-corelibs/x-text/internal/tag"
+	"github.com/go-corelibs/x-text/unicode/cldr"
 )
 
 var (
@@ -1500,7 +1500,7 @@ func main() {
 	w := gen.NewCodeWriter()
 	defer w.WriteGoFile("tables.go", "language")
 
-	fmt.Fprintln(w, `import "golang.org/x/text/internal/tag"`)
+	fmt.Fprintln(w, `import "github.com/go-corelibs/x-text/internal/tag"`)
 
 	b := newBuilder(w)
 	gen.WriteCLDRVersion(w)

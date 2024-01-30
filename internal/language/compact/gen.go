@@ -14,8 +14,8 @@ import (
 	"fmt"
 	"log"
 
-	"golang.org/x/text/internal/gen"
-	"golang.org/x/text/unicode/cldr"
+	"github.com/go-corelibs/x-text/internal/gen"
+	"github.com/go-corelibs/x-text/unicode/cldr"
 )
 
 var (
@@ -33,7 +33,7 @@ func main() {
 	w := gen.NewCodeWriter()
 	defer w.WriteGoFile("tables.go", "compact")
 
-	fmt.Fprintln(w, `import "golang.org/x/text/internal/language"`)
+	fmt.Fprintln(w, `import "github.com/go-corelibs/x-text/internal/language"`)
 
 	b := newBuilder(w)
 	gen.WriteCLDRVersion(w)

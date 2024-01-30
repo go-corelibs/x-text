@@ -5,9 +5,9 @@
 package plural_test
 
 import (
-	"golang.org/x/text/feature/plural"
-	"golang.org/x/text/language"
-	"golang.org/x/text/message"
+	"github.com/go-corelibs/x-text/feature/plural"
+	"github.com/go-corelibs/x-text/language"
+	"github.com/go-corelibs/x-text/message"
 )
 
 func ExampleSelect() {

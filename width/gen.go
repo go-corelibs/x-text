@@ -16,8 +16,8 @@ import (
 	"math"
 	"unicode/utf8"
 
-	"golang.org/x/text/internal/gen"
-	"golang.org/x/text/internal/triegen"
+	"github.com/go-corelibs/x-text/internal/gen"
+	"github.com/go-corelibs/x-text/internal/triegen"
 )
 
 // See gen_common.go for flags.

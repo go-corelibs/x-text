@@ -20,7 +20,7 @@ import (
 	"strings"
 	"testing"
 
-	"golang.org/x/text/language"
+	"github.com/go-corelibs/x-text/language"
 )
 
 var genFiles = flag.Bool("gen", false, "generate output files instead of comparing")
@@ -142,7 +142,7 @@ func initTestdataModule(t *testing.T, dst string) {
 
 	goMod := fmt.Sprintf(`module testdata
 
-replace golang.org/x/text => %s
+replace github.com/go-corelibs/x-text => %s
 `, xTextDir)
 	if err := os.WriteFile(filepath.Join(dst, "go.mod"), []byte(goMod), 0644); err != nil {
 		t.Fatal(err)

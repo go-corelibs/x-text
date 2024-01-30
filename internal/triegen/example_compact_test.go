@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"io"
 
-	"golang.org/x/text/internal/triegen"
+	"github.com/go-corelibs/x-text/internal/triegen"
 )
 
 func ExampleCompacter() {

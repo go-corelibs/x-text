@@ -19,7 +19,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	fmtparser "golang.org/x/text/internal/format"
+	fmtparser "github.com/go-corelibs/x-text/internal/format"
 
 	"golang.org/x/tools/go/callgraph"
 	"golang.org/x/tools/go/callgraph/cha"
@@ -109,7 +109,7 @@ func (x *extracter) seedEndpoints() error {
 		for k := range p.Imports {
 			imports = imports + k + "\n"
 		}
-		if p2, ok := p.Imports["golang.org/x/text/message"]; ok {
+		if p2, ok := p.Imports["github.com/go-corelibs/x-text/message"]; ok {
 			pkg = p2
 			break
 		}
@@ -121,14 +121,14 @@ func (x *extracter) seedEndpoints() error {
 
 	var typ *types.Pointer
 	for _, typeAndVal := range pkg.TypesInfo.Types {
-		if typeAndVal.Type.String() == "golang.org/x/text/message.Printer" {
+		if typeAndVal.Type.String() == "github.com/go-corelibs/x-text/message.Printer" {
 			typ = types.NewPointer(typeAndVal.Type)
 			break
 		}
 	}
 
 	if typ == nil {
-		return errors.New("pipeline: golang.org/x/text/message.Printer was not found")
+		return errors.New("pipeline: github.com/go-corelibs/x-text/message.Printer was not found")
 	}
 
 	x.processGlobalVars()

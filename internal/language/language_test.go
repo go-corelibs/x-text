@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"testing"
 
-	"golang.org/x/text/internal/testtext"
+	"github.com/go-corelibs/x-text/internal/testtext"
 )
 
 func TestTagSize(t *testing.T) {

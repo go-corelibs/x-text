@@ -18,7 +18,7 @@ import (
 	"golang.org/x/tools/go/packages"
 )
 
-const printerType = "golang.org/x/text/message.Printer"
+const printerType = "github.com/go-corelibs/x-text/message.Printer"
 
 // Rewrite rewrites the Go files in a single package to use the localization
 // machinery and rewrites strings to adopt best practices when possible.
@@ -138,7 +138,7 @@ func (r *rewriter) Visit(n ast.Node) ast.Visitor {
 
 	// TODO: remove cheap hack and check if the type either
 	// implements some interface or is specifically of type
-	// "golang.org/x/text/message".Printer.
+	// "github.com/go-corelibs/x-text/message".Printer.
 	m, ok := rewriteFuncs[source]
 	if !ok {
 		return r
@@ -242,7 +242,7 @@ type rewriteType struct {
 // rewriteFuncs list functions that can be directly mapped to the printer
 // functions of the message package.
 var rewriteFuncs = map[string]map[string]rewriteType{
-	// TODO: Printer -> *golang.org/x/text/message.Printer
+	// TODO: Printer -> *github.com/go-corelibs/x-text/message.Printer
 	"fmt": {
 		"Print":  rewriteType{methodf: "Printf"},
 		"Sprint": rewriteType{methodf: "Sprintf"},
