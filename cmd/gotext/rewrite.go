@@ -22,13 +22,15 @@ const printerType = "github.com/go-corelibs/x-text/message.Printer"
 var cmdRewrite = &Command{
 	Init:      initRewrite,
 	Run:       runRewrite,
-	UsageLine: "rewrite <package>",
+	UsageLine: "rewrite [-w] <package>",
 	Short:     "rewrites fmt functions to use a message Printer",
 	Long: `
 rewrite is typically done once for a project. It rewrites all usages of
 fmt to use x/text's message package whenever a message.Printer is in scope.
 It rewrites Print and Println calls with constant strings to the equivalent
 using Printf to allow translators to reorder arguments.
+
+The -w flag specifies to write files in place.
 `,
 }
 
