@@ -41,6 +41,8 @@ var (
 
 	srcLang = flag.String("srclang", "en-US", "the source-code language")
 	dir     = flag.String("dir", "locales", "default subdirectory to store translation files")
+	declVar = flag.String("declare-var", "", "variable to declare when generating go sources")
+	goBuild = flag.String("go-build", "", "go:build constraint to include when generating go sources")
 )
 
 func config() (*pipeline.Config, error) {
@@ -48,12 +50,26 @@ func config() (*pipeline.Config, error) {
 	if err != nil {
 		return nil, wrap(err, "invalid srclang")
 	}
+	empty := ""
+	if out == nil {
+		out = &empty
+	}
+	if dir == nil {
+		dir = &empty
+	}
+	if overwrite == nil {
+		nope := false
+		overwrite = &nope
+	}
 	return &pipeline.Config{
 		SourceLanguage:      tag,
 		Supported:           getLangs(),
 		TranslationsPattern: `messages\.(.*)\.json$`,
 		GenFile:             *out,
 		Dir:                 *dir,
+		SetDefault:          *declVar == "",
+		DeclareVar:          *declVar,
+		GoBuild:             *goBuild,
 	}, nil
 }
 
@@ -172,7 +188,14 @@ var usageTemplate = `gotext is a tool for managing text in Go source code.
 
 Usage:
 
-	gotext command [arguments]
+	gotext [global options] command [arguments]
+
+The global options are:
+    -srclang=<code>            source code language used (default: en-US)
+    -declare-var=<name>        declare variable instead of overwriting the
+                               message.DefaultCatalog package global
+    -go-build=<constraint>     include a //go:build constraint with the
+                               generated catalog
 
 The commands are:
 {{range .}}{{if .Runnable}}

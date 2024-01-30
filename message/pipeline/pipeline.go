@@ -99,6 +99,10 @@ type Config struct {
 	// not defined, false otherwise.
 	SetDefault bool
 
+	// GoBuild specifies `//go:build` constraints to include when generating
+	// go sources
+	GoBuild string
+
 	// TODO:
 	// - Printf-style configuration
 	// - Template-style configuration

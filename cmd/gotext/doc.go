@@ -4,7 +4,15 @@
 //
 // Usage:
 //
-//	gotext command [arguments]
+//	gotext [global options] command [arguments]
+//
+// The global options are:
+//
+//	-srclang=<code>            source code language used (default: en-US)
+//	-declare-var=<name>        declare variable instead of overwriting the
+//	                           message.DefaultCatalog package global
+//	-go-build=<constraint>     include a //go:build constraint with the
+//	                           generated catalog
 //
 // The commands are:
 //
