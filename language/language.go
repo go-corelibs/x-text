@@ -50,6 +50,19 @@ func (t *Tag) UnmarshalBinary(data []byte) (err error) {
 	return
 }
 
+// Compare returns true if the first tag is equivalent to one of the remaining
+// tags given
+//
+// Compare was added by Go-Enjin
+func Compare(a Tag, others ...Tag) (equal bool) {
+	for _, b := range others {
+		if equal = a.lang() == b.lang() && a.script() == b.script() && a.region() == b.region(); equal {
+			return
+		}
+	}
+	return
+}
+
 // Make is a convenience wrapper for Parse that omits the error.
 // In case of an error, a sensible default is returned.
 func Make(s string) Tag {
