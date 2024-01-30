@@ -186,6 +186,13 @@ Additional help topics:
 
 Use "gotext help [topic]" for more information about that topic.
 
+IMPORTANT:
+
+This version of gotext is from github.com/go-corelibs/x-text and not the
+upstream golang.org/x/text. In order to use this version the codebase must
+use the github.com/go-corelibs/x-text package as a drop-in replacement for
+the upstream golang.org/x/text package. No translations will be found
+otherwise.
 `
 
 var helpTemplate = `{{if .Runnable}}usage: gotext {{.UsageLine}}
