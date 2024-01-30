@@ -11,6 +11,8 @@ package compact
 // - verifying that tables are dropped correctly (most notably matcher tables).
 
 import (
+	"fmt"
+	"strconv"
 	"strings"
 
 	"github.com/go-corelibs/x-text/internal/language"
@@ -24,6 +26,51 @@ type Tag struct {
 	language ID
 	locale   ID
 	full     fullTag // always a language.Tag for now.
+}
+
+// MarshalBinary was added by Go-Enjin
+func (t *Tag) MarshalBinary() (data []byte, err error) {
+	text := fmt.Sprintf("language:%d;locale:%d", t.language, t.locale)
+	data = []byte(text)
+	return
+}
+
+// UnmarshalBinary was added by Go-Enjin
+func (t *Tag) UnmarshalBinary(data []byte) (err error) {
+	text := string(data)
+	segments := strings.Split(text, ";")
+	if len(segments) != 2 {
+		err = fmt.Errorf("invalid number of segements in gob data: \"%v\"", text)
+		return
+	}
+
+	for _, segment := range segments {
+		kv := strings.Split(segment, ":")
+		if len(kv) != 2 {
+			err = fmt.Errorf("invalid key-value pair in gob data segment: \"%v\"", segment)
+			return
+		}
+		switch kv[0] {
+		case "language":
+			if vi, ee := strconv.ParseUint(kv[1], 16, 16); ee != nil {
+				err = fmt.Errorf("invalid language value in gob data pair: %+v - %v", kv, ee)
+				return
+			} else {
+				t.language = ID(vi)
+			}
+		case "locale":
+			if vi, ee := strconv.ParseUint(kv[1], 16, 16); ee != nil {
+				err = fmt.Errorf("invalid locale value in gob data pair: %+v - %v", kv, ee)
+				return
+			} else {
+				t.locale = ID(vi)
+			}
+		default:
+			err = fmt.Errorf("invalid key name in gob data pair: %+v", kv)
+			return
+		}
+	}
+	return
 }
 
 const _und = 0

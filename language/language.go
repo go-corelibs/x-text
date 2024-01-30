@@ -38,6 +38,18 @@ func (t *Tag) lang() language.Language { return t.tag().LangID }
 func (t *Tag) region() language.Region { return t.tag().RegionID }
 func (t *Tag) script() language.Script { return t.tag().ScriptID }
 
+// MarshalBinary was added by Go-Enjin
+func (t *Tag) MarshalBinary() (data []byte, err error) {
+	data, err = (*compact.Tag)(t).MarshalBinary()
+	return
+}
+
+// MarshalBinary was added by Go-Enjin
+func (t *Tag) UnmarshalBinary(data []byte) (err error) {
+	err = (*compact.Tag)(t).UnmarshalBinary(data)
+	return
+}
+
 // Make is a convenience wrapper for Parse that omits the error.
 // In case of an error, a sensible default is returned.
 func Make(s string) Tag {
