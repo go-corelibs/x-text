@@ -34,6 +34,13 @@ func (d *dict) Lookup(key string) (data string, ok bool) {
 }
 
 func (b *Builder) lookup(tag language.Tag, key string) (data string, ok bool) {
+	// begin Go-Enjin
+	for _, c := range b.catalogs {
+		if data, ok = c.lookup(tag, key); ok {
+			return
+		}
+	}
+	// end Go-Enjin
 	return b.index.lookup(tag, key)
 }
 
