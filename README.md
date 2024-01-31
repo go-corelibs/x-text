@@ -13,17 +13,20 @@ propagate back.
 
 ### Maintained Changes
 
-0. `cmd/gotext,message/pipeline: ssoroka - go modules support, see: https://github.com/golang/text/commit/059a5b1dfb6e3c931765fdc5ad8a49299f7bf55b`
-1. `*.{go,json}: replace instances of golang.org/x/text with github.com/go-corelibs/x-text`
-2. `language: implement MarshalBinary and UnmarshalBinary methods for Tag structures`
-3. `language: added func Compare(a Tag, others ...Tag) (equal bool)`
-4. `cmd/gotext: document rewrite sub-command -w option`
-5. `cmd/gotext: add IMPORTANT notices to docstrings and --help output`
-6. `message/catalog: implement Include catalog Option and Builder support`
-7. `message/pipeline: do not clear message .Key during State.Merge process`
-8. `cmd/gotext,message/pipeline: document -srclang global option; implement -declare-var and -go-build global options`
-9. `.gitignore: add /gotext`
-10. `README.md: Go-CoreLibs fork updates`
+| #  | commit message |
+|----|----------------|
+| 0  | `cmd/gotext,message/pipeline: ssoroka - go modules support, see: https://github.com/golang/text/commit/059a5b1dfb6e3c931765fdc5ad8a49299f7bf55b` |
+| 1  | `*.{go,json}: replace instances of golang.org/x/text with github.com/go-corelibs/x-text` |
+| 2  | `language: implement MarshalBinary and UnmarshalBinary methods for Tag structures` |
+| 3  | `language: added func Compare(a Tag, others ...Tag) (equal bool)` |
+| 4  | `cmd/gotext: document rewrite sub-command -w option` |
+| 5  | `cmd/gotext: add IMPORTANT notices to docstrings and --help output` |
+| 6  | `message/catalog: implement Include catalog Option and Builder support` |
+| 7  | `message/pipeline: do not clear message .Key during State.Merge process` |
+| 8  | `cmd/gotext,message/pipeline: document -srclang global option; implement -declare-var and -go-build global options` |
+| 9  | `.gitignore: add /gotext` |
+| 10 | `README.md: Go-CoreLibs fork updates` |
+| 11 | `message: added http.Request tag and printer functions` |
 
 ### Branching Structure
 
